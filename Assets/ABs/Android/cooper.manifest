@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2482779673
+CRC: 84599337
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1c9dfe0e180adcef8ffdbc2765d5437c
+    Hash: a82edbf61247c296001ed1501f200aca
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d39e9a74c78976b096ba8ceb9fb4a289
+    Hash: 2a6feb755ee12a1fcdd5a2dbec64888e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -19,12 +19,16 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
 - Class: 90
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
 Assets:
-- Assets/Prefabs/Astronaut_With_Texture/COOPER.fbx
+- Assets/Prefabs/COOPER.prefab
 Dependencies: []

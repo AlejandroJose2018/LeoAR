@@ -1,7 +1,7 @@
 {
    "characters": {
       "astronaut": {
-         "prefaburl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcooper?alt=media&token=7a222732-1e13-49e7-93fe-4536632cf6fa",
+         "prefaburl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcooper?alt=media&token=f674accf-23c7-4786-90cc-6da32d6fdb32",
          "prefabobj": "CHAR_Cooper",
          "textureurl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcooperbody?alt=media&token=b2720422-dcd3-49a4-8868-062a25c8fcaa",
          "textures": [
@@ -43,7 +43,7 @@
          ]
       },
       "skeleton": {
-         "prefaburl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fskeleton?alt=media&token=416b3cfa-bc83-48f6-847c-099f59438e29",
+         "prefaburl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fskeleton?alt=media&token=7c71f16e-435e-40aa-bb60-29e47f0595e8",
          "prefabobj": "Skeleton",
          "textureurl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fskeletontexture?alt=media&token=5824bb75-70c6-414f-8aa9-6878ef4434ec",
          "textures": [

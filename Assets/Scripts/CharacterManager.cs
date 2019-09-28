@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterManager : MonoBehaviour
@@ -202,7 +203,7 @@ public class CharacterManager : MonoBehaviour
             touchStart = false;
         }*/
 #else
-        if (Input.touchCount > 0)
+        /*if (Input.touchCount > 0)
         {
             timePassed += Time.deltaTime;
             if (timePassed > 1)
@@ -227,7 +228,7 @@ public class CharacterManager : MonoBehaviour
         {
             timePassed = 0;
             touchStart = false;
-        }
+        }*/
 #endif
     }
     private void FixedUpdate()
@@ -252,5 +253,30 @@ public class CharacterManager : MonoBehaviour
         if(selectedObj != null)
             selectedObj.transform.Translate(new Vector3(direction.x,0,direction.y) * speed * Time.deltaTime);
     
+    }
+
+    public GameObject explosionPrefab;
+    public void ExplodeCharacter()
+    {
+        if (selectedObj != null)
+        {
+            StartCoroutine(characterExplode());
+        }
+    }
+    IEnumerator characterExplode()
+    {
+        GameObject.Find("Explode").GetComponent<Button>().enabled = false;
+        var explosion = Instantiate(explosionPrefab, selectedObj.transform.position, selectedObj.transform.rotation);
+        selectedObj.GetComponent<Rigidbody>().freezeRotation = false;
+        selectedObj.GetComponent<Animator>().runtimeAnimatorController = null;
+        selectedObj.GetComponent<Rigidbody>().AddExplosionForce(250, new Vector3(selectedObj.transform.position.x+Random.Range(-0.5f,0.5f), selectedObj.transform.position.y - 1, selectedObj.transform.position.z + Random.Range(-0.5f, 0.5f)), 10);
+        yield return new WaitForSeconds(2);
+        Destroy(selectedObj);
+        GameObject.Find("Explode").GetComponent<Button>().enabled = true;
+    }
+
+    public void ResetAll()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

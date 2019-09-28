@@ -1,22 +1,22 @@
 ManifestFileVersion: 0
-CRC: 3430301427
+CRC: 2349733973
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: cooper
-      Dependencies: {}
-    Info_1:
       Name: cooperbody
       Dependencies: {}
-    Info_2:
+    Info_1:
       Name: cooperdance
       Dependencies: {}
-    Info_3:
+    Info_2:
       Name: skeleton
       Dependencies: {}
-    Info_4:
+    Info_3:
       Name: skeletontexture
       Dependencies: {}
-    Info_5:
+    Info_4:
       Name: skeletondance
+      Dependencies: {}
+    Info_5:
+      Name: cooper
       Dependencies: {}
