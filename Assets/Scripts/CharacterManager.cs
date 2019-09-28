@@ -39,7 +39,6 @@ public class CharacterManager : MonoBehaviour
                 {
                     StartCoroutine(DownloadCor(to.Value));
                 });
-                print(to.Value);
                 indexer++;
             }
         }
@@ -98,10 +97,6 @@ public class CharacterManager : MonoBehaviour
             if (texture.Value["texturetype"] == "diffuse")
             {
                 var tempmat = materialList.Find(item => item.name == texture.Value["texturename"] + " (Instance)");
-                foreach (var mm in materialList)
-                {
-                    print(texture.Value["texturename"] + "  ---  " + mm);
-                }
                 var tempText = textureBundle.LoadAssetAsync<Texture>(texture.Value["textureaddress"]);
                 yield return tempText;
                 tempmat.SetTexture("_MainTex", tempText.asset as Texture);
@@ -109,10 +104,6 @@ public class CharacterManager : MonoBehaviour
             else if (texture.Value["texturetype"] == "normal")
             {
                 var tempmat = materialList.Find(item => item.name == texture.Value["texturename"] + " (Instance)");
-                foreach (var mm in materialList)
-                {
-                    print(texture.Value["texturename"] + " (Instance)" + "  ---  " + mm + (texture.Value["texturename"] + " (Instance)").Equals(mm));
-                }
                 var tempText = textureBundle.LoadAssetAsync<Texture>(texture.Value["textureaddress"]);
                 yield return tempText;
                 tempmat.SetTexture("_NORMALMAP", tempText.asset as Texture);
@@ -157,5 +148,109 @@ public class CharacterManager : MonoBehaviour
             list.Add(Go.transform.GetChild(i).gameObject);
         }
         return list;
+    }
+
+    float timeFactor;
+    Vector2 beginVector, endVector;
+    bool touchStart = false;
+    public GameObject circle, joystick;
+    int speed = 1;
+    bool startJoystick;
+    private void Update()
+    {
+
+#if UNITY_EDITOR
+        
+        if (Input.GetMouseButton(0))
+        {
+            timeFactor += Time.deltaTime;
+            if (timeFactor > 0.2f)
+            {
+                if (!startJoystick)
+                {
+                    beginVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+                    circle.GetComponent<RectTransform>().anchoredPosition = beginVector;
+                    joystick.GetComponent<RectTransform>().anchoredPosition = beginVector;
+                    circle.GetComponent<CanvasGroup>().alpha = 1;
+                    joystick.GetComponent<CanvasGroup>().alpha = 1;
+                    startJoystick = true;
+                }
+
+                touchStart = true;
+                endVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            }
+
+        }
+        else
+        {
+            timeFactor = 0;
+            touchStart = false;
+            startJoystick = false;
+        }
+        /* if (Input.GetMouseButtonDown(0))
+        {
+           
+        }
+        if (Input.GetMouseButton(0))
+        {
+            touchStart = true;
+            endVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            print(endVector);
+        }
+        else
+        {
+            touchStart = false;
+        }*/
+#else
+        if (Input.touchCount > 0)
+        {
+            timePassed += Time.deltaTime;
+            if (timePassed > 1)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    
+                    beginVector = new Vector2(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+                    circle.GetComponent<RectTransform>().anchoredPosition = beginVector ;
+                    joystick.GetComponent<RectTransform>().anchoredPosition = beginVector ;
+                    circle.GetComponent<CanvasGroup>().alpha = 1;
+                    joystick.GetComponent<CanvasGroup>().alpha = 1;
+                }
+
+                touchStart = true;
+                endVector = new Vector2(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+            }
+        }
+        else
+        {
+            timePassed = 0;
+            touchStart = false;
+        }
+#endif
+    }
+    private void FixedUpdate()
+    {
+        if (touchStart)
+        {
+            Vector2 offset = endVector - beginVector;
+            Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
+            moveCharacter(direction * -1);
+
+            circle.GetComponent<RectTransform>().anchoredPosition = new Vector2(beginVector.x + direction.x * 20, beginVector.y + direction.y*20) ;
+        }
+        else
+        {
+            circle.GetComponent<CanvasGroup>().alpha = 0;
+            joystick.GetComponent<CanvasGroup>().alpha = 0;
+        }
+
+    }
+    void moveCharacter(Vector2 direction)
+    {
+        if(selectedObj != null)
+            selectedObj.transform.Translate(new Vector3(direction.x,0,direction.y) * speed * Time.deltaTime);
+    
     }
 }
