@@ -9,6 +9,5 @@ public class CreateAssets : MonoBehaviour
     static void BuildABs()
     {
         BuildPipeline.BuildAssetBundles("Assets/ABs/Android", BuildAssetBundleOptions.None, BuildTarget.Android);
-        //BuildPipeline.BuildAssetBundles("Assets/ABs/iOS", BuildAssetBundleOptions.None, BuildTarget.iOS);
     }
 }

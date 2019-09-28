@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1242194755
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 98123fc476f6d02afdb518eba36c93df
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f19fbf085e00d23fbc8d6cf7b345590b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/Astronaut_With_Texture/Cooper_Body_Diff.jpg
+- Assets/Prefabs/Astronaut_With_Texture/Cooper_Body_Normal.jpg
+Dependencies: []

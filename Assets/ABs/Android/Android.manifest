@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 3871741670
+CRC: 4059551436
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: cooper
+      Dependencies: {}
+    Info_1:
+      Name: cooperbody
       Dependencies: {}
