@@ -78,8 +78,7 @@ public class CharacterManager : MonoBehaviour
             Destroy(selectedObj);
 
         selectedObj = Instantiate(ast, new Vector3(0, 0, 0), Quaternion.identity);
-        print(selectedObj.name);
-
+        selectedObj.GetComponent<Animator>().runtimeAnimatorController = Ani;
         var uwrTexture = UnityWebRequestAssetBundle.GetAssetBundle(jSON["textureurl"]);
         yield return uwrTexture.SendWebRequest();
         textureBundle = DownloadHandlerAssetBundle.GetContent(uwrTexture);
@@ -125,6 +124,10 @@ public class CharacterManager : MonoBehaviour
         danceBundle = DownloadHandlerAssetBundle.GetContent(uwrDance);
         int indexer = 0;
 
+        foreach (var child in GetAllChilds(danceContent))
+        {
+            Destroy(child);
+        }
         foreach(var dance in jSON["animatons"])
         {
             var danceAnim = danceBundle.LoadAssetAsync<RuntimeAnimatorController>(dance.Value["address"]);
@@ -133,19 +136,26 @@ public class CharacterManager : MonoBehaviour
             var danceNew = Instantiate(dancePrefab);
             danceNew.transform.SetParent(danceContent.transform);
             danceNew.GetComponent<RectTransform>().sizeDelta = new Vector2(160, 160);
-            danceNew.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -(indexer * 220 + 180));
+            danceNew.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -(indexer * 220 + 110));
             danceNew.transform.Find("text").GetComponent<TextMeshProUGUI>().text = dance.Value["name"];
             danceNew.name = dance.Value["name"];
             danceNew.GetComponent<Button>().onClick.AddListener(() =>
             {
                 selectedObj.GetComponent<Animator>().runtimeAnimatorController = danceAnim.asset as RuntimeAnimatorController;
             });
-            if (indexer == 0)
-            {
-                selectedObj.GetComponent<Animator>().runtimeAnimatorController = danceAnim.asset as RuntimeAnimatorController;
-            }
+            
             indexer++;
         }
         
+    }
+
+    public List<GameObject> GetAllChilds(GameObject Go)
+    {
+        List<GameObject> list = new List<GameObject>();
+        for (int i = 0; i < Go.transform.childCount; i++)
+        {
+            list.Add(Go.transform.GetChild(i).gameObject);
+        }
+        return list;
     }
 }

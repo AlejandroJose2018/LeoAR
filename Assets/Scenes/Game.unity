@@ -152,8 +152,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102.38, y: 270}
-  m_SizeDelta: {x: 202.38, y: 740}
+  m_AnchoredPosition: {x: -102.38, y: 337.85}
+  m_SizeDelta: {x: 202.4, y: 675.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &622482357
 GameObject:
@@ -553,8 +553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -170, y: 677}
-  m_SizeDelta: {x: 200, y: 540}
+  m_AnchoredPosition: {x: -170, y: 609.2}
+  m_SizeDelta: {x: 200, y: 675.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093905247
 MonoBehaviour:
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ani: {fileID: 9100000, guid: 1b005bad6ba0bc5469e196da1386f690, type: 2}
-  mainJson: https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcharacters.txt?alt=media&token=87cfae8b-b344-4967-9a98-41a797ffa485
+  mainJson: https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcharacters.txt?alt=media&token=fb29fd03-4d2e-4dc5-84d4-b22c5b939940
   characterContent: {fileID: 1365011489}
   characterPrefab: {fileID: 2581996623963975497, guid: 9c51df7709a2e1d438213c99c44fbb50,
     type: 3}

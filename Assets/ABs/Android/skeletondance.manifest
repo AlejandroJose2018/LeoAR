@@ -1,18 +1,20 @@
 ManifestFileVersion: 0
-CRC: 278813442
+CRC: 2222234912
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 09f9e19276cd247b560fea40e1874189
+    Hash: c1f2890f1296b21829cdf3f5b0411590
   TypeTreeHash:
     serializedVersion: 2
-    Hash: af57576da81d5d3ce45807ac11234de6
+    Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
 HashAppended: 0
 ClassTypes:
 - Class: 74
   Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
 Assets:
-- Assets/Prefabs/Skeleton_Fbx_No_Texture/Hiphop.anim
-- Assets/Prefabs/Skeleton_Fbx_No_Texture/Chicken.anim
-- Assets/Prefabs/Skeleton_Fbx_No_Texture/Gangnam.anim
+- Assets/Prefabs/Skeleton_Fbx_No_Texture/Hiphop.controller
+- Assets/Prefabs/Skeleton_Fbx_No_Texture/Gangnam.controller
+- Assets/Prefabs/Skeleton_Fbx_No_Texture/Chicken.controller
 Dependencies: []
