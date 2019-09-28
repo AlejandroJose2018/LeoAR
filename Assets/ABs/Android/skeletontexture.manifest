@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 3750882857
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e4df82256b29f409487acabcf562c0d3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f19fbf085e00d23fbc8d6cf7b345590b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/Skeleton_With_Texture/diffuse_map.jpg
+- Assets/Prefabs/Skeleton_With_Texture/normal_map.jpg
+Dependencies: []

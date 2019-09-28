@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 278813442
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 09f9e19276cd247b560fea40e1874189
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: af57576da81d5d3ce45807ac11234de6
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/Skeleton_Fbx_No_Texture/Hiphop.anim
+- Assets/Prefabs/Skeleton_Fbx_No_Texture/Chicken.anim
+- Assets/Prefabs/Skeleton_Fbx_No_Texture/Gangnam.anim
+Dependencies: []
