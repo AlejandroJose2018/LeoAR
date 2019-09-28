@@ -1,0 +1,78 @@
+{
+   "characters": {
+      "astronaut": {
+         "prefaburl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcooper?alt=media&token=7a222732-1e13-49e7-93fe-4536632cf6fa",
+         "prefabobj": "CHAR_Cooper",
+         "textureurl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcooperbody?alt=media&token=b2720422-dcd3-49a4-8868-062a25c8fcaa",
+         "textures": [
+            {
+               "texturename": "MAT_CHAR_Cooper_Body",
+               "textureaddress": "Cooper_Body_Diff",
+               "texturetype": "diffuse"
+            },
+            {
+               "texturename": "MAT_CHAR_Cooper_Body",
+               "textureaddress": "Cooper_Body_Normal",
+               "texturetype": "normal"
+            },
+            {
+               "texturename": "MAT_CHAR_Cooper_Head",
+               "textureaddress": "Cooper_Body_Diff",
+               "texturetype": "diffuse"
+            },
+            {
+               "texturename": "MAT_CHAR_Cooper_Head",
+               "textureaddress": "Cooper_Body_Normal",
+               "texturetype": "normal"
+            }
+         ],
+         "animationurl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fcooperdance?alt=media&token=6608f1bf-6cf7-40dc-96dd-f3838d07ac13",
+         "animatons": [
+            {
+               "name": "Chicken Dance",
+               "address": "Chicken"
+            },
+            {
+               "name": "Marachino Dance",
+               "address": "Maraschino"
+            },
+            {
+               "name": "RunningMan Dance",
+               "address": "RunningMan"
+            }
+         ]
+      },
+      "skeleton": {
+         "prefaburl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fskeleton?alt=media&token=416b3cfa-bc83-48f6-847c-099f59438e29",
+         "prefabobj": "Skeleton",
+         "textureurl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fskeletontexture?alt=media&token=5824bb75-70c6-414f-8aa9-6878ef4434ec",
+         "textures": [
+            {
+               "texturename": "Skeleton",
+               "textureaddress": "diffuse_map",
+               "texturetype": "diffuse"
+            },
+            {
+               "texturename": "Skeleton",
+               "textureaddress": "normal_map",
+               "texturetype": "normal"
+            }
+         ],
+         "animationurl": "https://firebasestorage.googleapis.com/v0/b/leoar-b28a8.appspot.com/o/models%2Fskeletondance?alt=media&token=cde01a8e-156a-480d-8c10-3df6e1442478",
+         "animatons": [
+            {
+               "name": "Chicken Dance",
+               "address": "Chicken"
+            },
+            {
+               "name": "Gangnam Style",
+               "address": "Gangnam"
+            },
+            {
+               "name": "Hiphop Dance",
+               "address": "Hiphop"
+            }
+         ]
+      }
+   }
+}
